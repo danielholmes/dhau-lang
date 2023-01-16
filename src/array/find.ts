@@ -6,4 +6,4 @@ function findOnly<T>(array: ReadonlyArray<T>, predicate: (item: T) => boolean, m
     return found[0];
 }
 
-export default findOnly;
+export { findOnly };

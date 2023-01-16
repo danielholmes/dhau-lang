@@ -1,5 +1,2 @@
-import findOnly from './array/findOnly';
-
-export {
-    findOnly
-}
+export * from "./error/caught-result"
+export * from "./array/find"
