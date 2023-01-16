@@ -17,6 +17,5 @@ npm add @dhau/lang
 
 ### Publishing
 
-1. `npm run clean`
-2. `npm run build`
-3. `npm publish`
+1. Manually set new version in `package.json`
+2. `npm run deploy`

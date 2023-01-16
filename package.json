@@ -1,6 +1,6 @@
 {
   "name": "@dhau/lang",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Various language extensions for JS",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -17,8 +17,8 @@
   "scripts": {
     "clean": "rm -rf",
     "build": "tsc --outDir dist",
-    "publish": "npm publish --access public",
-    "deploy": "run-s clean build publish"
+    "npm:publish": "npm publish --access public",
+    "deploy": "run-s clean build npm:publish"
   },
   "author": "Daniel Holmes",
   "license": "MIT",
