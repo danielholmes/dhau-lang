@@ -1,12 +1,19 @@
+function isError(error: unknown): error is Error {
+  // TODO: Must be a better check
+  return typeof error === "object" && !!error;
+}
+
 function caughtResultToError(error: unknown): Error {
-    // TODO: Must be a better check
-    if (typeof error === "object" && error) {
-      return error as any;
+    if (isError(error)) {
+      return error;
     }
     return new Error(String(error));
   }
   
   function caughtResultToString(error: unknown): string {
+    if (isError(error)) {
+      return error.message;
+    }
     if (typeof error === "string") {
       return error;
     }

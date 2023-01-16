@@ -1,6 +1,6 @@
 {
   "name": "@dhau/lang",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Various language extensions for JS",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
