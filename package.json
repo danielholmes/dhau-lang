@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf",
+    "clean": "rm -rf dist",
     "format": "prettier -w \"src/**/*.ts\"",
     "format:check": "prettier -c \"src/**/*.ts\"",
     "prebuild": "run-p format:check test:all",
