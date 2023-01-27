@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { caughtResultToString } from "./caught-result";
+import { caughtResultToError, caughtResultToString } from "./caught-result";
 
 describe("caughtResult", () => {
   describe("caughtResultToString", () => {
@@ -19,6 +19,30 @@ describe("caughtResult", () => {
       const result = caughtResultToString(1234);
 
       assert.equal(result, "1234");
+    });
+  });
+
+  describe("caughtResultToError", () => {
+    it("should return same error instance", () => {
+      const error = new Error("Some message");
+
+      const result = caughtResultToError(error);
+
+      assert.strictEqual(result, error);
+    });
+
+    it("should return string error", () => {
+      const result = caughtResultToError("Some string");
+
+      assert.instanceOf(result, Error);
+      assert.equal(result.message, "Some string");
+    });
+
+    it("should return number as string", () => {
+      const result = caughtResultToError(1234);
+
+      assert.instanceOf(result, Error);
+      assert.equal(result.message, "1234");
     });
   });
 });

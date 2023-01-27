@@ -1,6 +1,5 @@
 function isError(error: unknown): error is Error {
-  // TODO: Must be a better check
-  return typeof error === "object" && !!error;
+  return error instanceof Error;
 }
 
 function caughtResultToError(error: unknown): Error {
