@@ -1,6 +1,6 @@
-# Dhau Lang
+# Dhau Lang Extras
 
-Some extra utilities to support JS built in types.
+Some extra utilities to support JS built in types. A companion to lodash.
 
 ## Installation
 
