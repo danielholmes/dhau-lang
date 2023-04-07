@@ -1,6 +1,6 @@
 {
   "name": "@dhau/lang-extras",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Various language extensions for JS",
   "sideEffects": false,

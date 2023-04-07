@@ -23,4 +23,29 @@ function maxOrThrow<T>(array: ArrayLike<T>): T {
   return maxByOrThrow(array, (v) => v);
 }
 
-export { maxByOrThrow, maxOrThrow };
+function minByOrThrow<T, R>(array: ArrayLike<T>, selector: (item: T) => R): T {
+  if (array.length === 0) {
+    throw new Error("No values");
+  }
+  let minItem: T = array[0];
+  let minValue: R = selector(minItem);
+  for (let i = 1; i < array.length; i++) {
+    const v = array[i];
+    const valueComparison = selector(v);
+    if (
+      minValue === undefined ||
+      minValue === null ||
+      valueComparison < minValue
+    ) {
+      minItem = v;
+      minValue = valueComparison;
+    }
+  }
+  return minItem;
+}
+
+function minOrThrow<T>(array: ArrayLike<T>): T {
+  return minByOrThrow(array, (v) => v);
+}
+
+export { maxByOrThrow, maxOrThrow, minOrThrow, minByOrThrow };
