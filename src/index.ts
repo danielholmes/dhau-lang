@@ -1,4 +1,4 @@
-export * from "./error/caught-result";
+export * from "./error/to-string";
 export * from "./array/find";
 export * from "./array/position";
 export * from "./array/limits";

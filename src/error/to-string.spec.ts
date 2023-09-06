@@ -1,22 +1,22 @@
 import { assert } from "chai";
-import { caughtResultToError, caughtResultToString } from "./caught-result";
+import { caughtResultToError, unknownToString } from "./to-string";
 
-describe("caughtResult", () => {
-  describe("caughtResultToString", () => {
+describe("toString", () => {
+  describe("unknownToString", () => {
     it("should return error message", () => {
-      const result = caughtResultToString(new Error("Some message"));
+      const result = unknownToString(new Error("Some message"));
 
       assert.equal(result, "Some message");
     });
 
     it("should return string", () => {
-      const result = caughtResultToString("Some string");
+      const result = unknownToString("Some string");
 
       assert.equal(result, "Some string");
     });
 
     it("should return number as string", () => {
-      const result = caughtResultToString(1234);
+      const result = unknownToString(1234);
 
       assert.equal(result, "1234");
     });
