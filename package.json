@@ -1,6 +1,6 @@
 {
   "name": "@dhau/lang-extras",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "Various language extensions for JS",
   "sideEffects": false,
@@ -10,7 +10,6 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
@@ -27,9 +26,8 @@
     "test": "mocha -w",
     "test:all": "mocha",
     "build:esm": "rollup --config rollup.config.js",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:ts": "tsc -p tsconfig.types.json",
     "build": "npm-run-all -s clean -p build:*",
-    "postbuild": "./scripts/cjs-extensions.sh",
     "npm:publish": "npm publish --access public",
     "deploy": "run-s build npm:publish",
     "prepare": "husky install"
@@ -40,13 +38,13 @@
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
-    "chai": "^4.3.7",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "chai": "^5.0.3",
+    "husky": "^9.0.6",
+    "lint-staged": "^15.2.0",
     "mocha": "^10.2.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.3",
-    "rollup": "^3.10.0",
+    "rollup": "^4.9.6",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
     "typescript": "^5.2.2"

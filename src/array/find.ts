@@ -29,19 +29,19 @@ function findOnlyIndexOrThrow<T>(
   return foundIndex;
 }
 
-export function findOnly<T, S extends T>(
+function findOnly<T, S extends T>(
   array: ArrayLike<T>,
   predicate: (item: T, index: number) => item is S,
   message?: string,
 ): S | undefined;
 
-export function findOnly<T>(
+function findOnly<T>(
   array: ArrayLike<T>,
   predicate: (item: T, index: number) => boolean,
   message?: string,
 ): T | undefined;
 
-export function findOnly<T, S extends T>(
+function findOnly<T, S extends T>(
   array: ArrayLike<T>,
   predicate:
     | ((item: T, index: number) => item is S)
@@ -55,19 +55,19 @@ export function findOnly<T, S extends T>(
   return array[index];
 }
 
-export function findOnlyOrThrow<T>(
+function findOnlyOrThrow<T>(
   array: ArrayLike<T>,
   predicate: (item: T, index: number) => boolean,
   message?: string,
 ): T;
 
-export function findOnlyOrThrow<T, S extends T>(
+function findOnlyOrThrow<T, S extends T>(
   array: ArrayLike<T>,
   predicate: (item: T, index: number) => item is S,
   message?: string,
 ): S;
 
-export function findOnlyOrThrow<T, S extends T>(
+function findOnlyOrThrow<T, S extends T>(
   array: ArrayLike<T>,
   predicate:
     | ((item: T, index: number) => boolean)
@@ -78,4 +78,4 @@ export function findOnlyOrThrow<T, S extends T>(
   return array[index];
 }
 
-export { findOnlyIndexOrThrow, findOnlyIndex };
+export { findOnlyIndexOrThrow, findOnly, findOnlyOrThrow, findOnlyIndex };
