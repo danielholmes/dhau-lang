@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { lastOrThrow, firstOrThrow } from "./position";
+import { lastOrThrow, firstOrThrow } from "./position.ts";
 
 describe("position", () => {
   describe("lastOrThrow", () => {

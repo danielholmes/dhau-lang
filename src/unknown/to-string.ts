@@ -12,11 +12,11 @@ function unknownToString(error: unknown): string {
   return String(error);
 }
 
-function caughtResultToError(error: unknown): Error {
+function unknownToError(error: unknown): Error {
   if (isError(error)) {
     return error;
   }
   return new Error(unknownToString(error));
 }
 
-export { unknownToString, caughtResultToError };
+export { unknownToString, unknownToError };

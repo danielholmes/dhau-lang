@@ -5,6 +5,8 @@
       // "outDir": "./dist/esm",
       "declaration": false,
       "declarationMap": false,
-      "sourceMap": false
+      "sourceMap": false,
+      "allowImportingTsExtensions": true,
+      "noEmit": true
     }
   }

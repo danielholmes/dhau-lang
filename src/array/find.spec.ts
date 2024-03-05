@@ -4,7 +4,7 @@ import {
   findOnly,
   findOnlyIndex,
   findOnlyIndexOrThrow,
-} from "./find";
+} from "./find.ts";
 
 describe("find", () => {
   describe("findOnly", () => {

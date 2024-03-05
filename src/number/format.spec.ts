@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { formatPercentage } from "./format";
+import { formatPercentage } from "./format.ts";
 
 describe("format", () => {
   describe("formatPercentage", () => {

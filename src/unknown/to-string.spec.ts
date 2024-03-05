@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { caughtResultToError, unknownToString } from "./to-string";
+import { unknownToError, unknownToString } from "./to-string.ts";
 
 describe("toString", () => {
   describe("unknownToString", () => {
@@ -22,24 +22,24 @@ describe("toString", () => {
     });
   });
 
-  describe("caughtResultToError", () => {
+  describe("unknownToError", () => {
     it("should return same error instance", () => {
       const error = new Error("Some message");
 
-      const result = caughtResultToError(error);
+      const result = unknownToError(error);
 
       assert.strictEqual(result, error);
     });
 
     it("should return string error", () => {
-      const result = caughtResultToError("Some string");
+      const result = unknownToError("Some string");
 
       assert.instanceOf(result, Error);
       assert.equal(result.message, "Some string");
     });
 
     it("should return number as string", () => {
-      const result = caughtResultToError(1234);
+      const result = unknownToError(1234);
 
       assert.instanceOf(result, Error);
       assert.equal(result.message, "1234");
