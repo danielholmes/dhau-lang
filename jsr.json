@@ -1,0 +1,5 @@
+{
+    "name": "@dhau/lang-extras",
+    "version": "0.0.7",
+    "exports": "./src/index.ts"
+}
