@@ -1,5 +1,7 @@
 # Dhau Lang Extras
 
+[![Test](https://github.com/danielholmes/lang-extras/actions/workflows/test.yml/badge.svg)](https://github.com/danielholmes/lang-extras/actions/workflows/test.yml)
+
 Some extra utilities to support JS built in types. A companion to lodash.
 
 ## Installation
@@ -18,4 +20,5 @@ npm add @dhau/lang
 ### Publishing
 
 1. Manually set new version in `package.json`
-2. `npm run deploy`
+2. Manually set new version in `jsr.json`
+3. `npm run deploy`
