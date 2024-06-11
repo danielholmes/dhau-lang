@@ -1,9 +1,11 @@
-name: Publish Package to npmjs
+name: Publish Package to npmjs and JSR
 
 on: workflow_dispatch
 
 jobs:
   publish:
+    name: "Publish"
+
     runs-on: ubuntu-24.04
 
     permissions:
@@ -38,7 +40,10 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Setup registry
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
+
       - name: Deploy
         run: npm run deploy
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+    
+      # TODO: Tag version number
