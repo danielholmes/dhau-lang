@@ -1,13 +1,14 @@
-name: Test
+name: Publish Package to npmjs
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-24.04
+
+    permissions:
+      id-token: write
+      contents: read
     
     steps:
       - uses: actions/checkout@v4
@@ -37,5 +38,7 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Test
-        run: npm run build
+      - name: Deploy
+        run: npm run deploy
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
