@@ -50,7 +50,7 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
     
       - name: Extract version
-        run: echo "TAG_NAME=$(jq .version package.json)" >> $GITHUB_ENV
+        run: echo "TAG_NAME=$(jq -r .version package.json)" >> $GITHUB_ENV
 
       - name: Deploy
         run: npm run deploy
