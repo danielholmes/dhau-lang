@@ -1,6 +1,12 @@
 name: Publish Package to npmjs and JSR
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      description:
+        description: 'Release description'
+        required: true
+        type: string
 
 jobs:
   publish:
@@ -42,8 +48,19 @@ jobs:
 
       - name: Setup registry
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" > ~/.npmrc
+    
+      - name: Extract version
+        run: echo "TAG_NAME=$(jq .version package.json)" >> $GITHUB_ENV
 
       - name: Deploy
         run: npm run deploy
     
-      # TODO: Tag version number
+      - name: Tag and release
+        uses: avakar/tag-and-release@v1
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: ${{ env.TAG_NAME }}
+          draft: false
+          body: ${{ inputs.description }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
