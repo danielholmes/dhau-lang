@@ -2,7 +2,9 @@
   "name": "@dhau/lang-extras",
   "version": "0.0.8",
   "type": "module",
-  "url": "https://github.com/danielholmes/lang-extras",
+  "repository": {
+    "url": "https://github.com/danielholmes/lang-extras"
+  },
   "description": "Various language extensions for JS",
   "sideEffects": false,
   "types": "./dist/index.d.ts",
