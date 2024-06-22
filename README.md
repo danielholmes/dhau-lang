@@ -21,4 +21,4 @@ npm add @dhau/lang
 
 1. Manually set new version in `package.json`
 2. Manually set new version in `jsr.json`
-3. `npm run deploy`
+3. Manually run publish github action (or run `npm run deploy`)
